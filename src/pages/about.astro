@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Arlan KOWO " description="About Arlan KOWO">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About Me"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/Code.jpg"
+					alt="Arlan KOWO at work "
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						From High School To College, I have always been passionate about Computer Science. Since basic age, I found 
+						myself drawn into programming, which sparked my curiosity and motivated me to dive deeper 
+						into the subject.
+					</p>
+					<p>
+						Throughout my academic journey, I pursued my interest by studying Engineer science at 
+						Polytech Nancy, then Computer Science at CESI, Gratuated school of Engineer. This provided 
+						me with a solid foundation of knowledge and skills in areas such as Programming, informations 
+						systems administration and it even help me grown my teamwork skill.
+					</p>
+					<p>
+						 I actively sought opportunities to gain practical 
+						experience in the field. I have had the privilege of working with AFRILAND First Bank 
+						as an inter, where I had the chance to apply my knowledge and further develop my skills 
+						especially in information system administration. These experiences helped me understand 
+						the real-world implications of Banking and honed my ability to occur in a dynamic area.
+					</p>
+					<p>
+					Today, I am excited to bring my passion, knowledge, and experience to new challenges and 
+					opportunities. I am eager to contribute my skills and make a positive impact. Thank you for 
+					your attention, and I look forward to connecting with you further!
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>Computer Science at CESI Gratuated school of Engineer (Since 2022) </p>
+				    <p>Engineer Science and embedded systems at IUC (2021-2022 ) </p>
+					<p>Engineer Science at Polytech Nancy (2019-2021) </p>
+
+
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p> Information System Administration </p>
+					<p> Oriented Object Programming (especially with Java and Python ) </p>
+                    <p> Machine Learning and Deep Learning knowledge </p>
+					<p> Virtualization (VMWare, VirtualBow, Docker) </p>
+					<p> Team Work </p>
+					
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
